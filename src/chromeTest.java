@@ -3,6 +3,8 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import graphql.Assert;
+
 public class chromeTest {
 	
 	public static void main(String[]args) {
@@ -13,6 +15,7 @@ public class chromeTest {
 		driver.get("http://www.github.com");
 		String title = driver.getTitle();
 		System.out.println(title);
+		Assert.assertTrue(title.contains("GitHub"));
 		System.out.println("Test Sucessfully passed");
 		driver.close();
 	}
